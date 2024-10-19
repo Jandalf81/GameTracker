@@ -1,17 +1,17 @@
-function getOptionsGames() {
+function getOptionsGame() {
     $(document).ready(function() { /// Wait till page is loaded
         // call PHP function with parameter
         $.ajax({
             type: "POST",
-            url: "functions/getOptionsGames.php",
+            url: "functions/getOptionsGame.php",
             dataType: "json",
             data: {},
             success: function (obj, textstatus) {
                 // console.log(obj);
                 if (obj.result == "OK") {
-                    $('#game').html(obj.data);
+                    $('#optionsGame').html(obj.data);
                 } else {
-                    $('#game').html("Fehler beim Laden der Daten");
+                    $('#optionsGame').html("Fehler beim Laden der Daten");
                 }
             },
             error: function (obj, textstatus) {

@@ -22,14 +22,31 @@ CREATE TABLE game (
 	FOREIGN KEY (collection) REFERENCES collection(id)
 );
 
+CREATE TABLE sessionType (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT NOT NULL
+);
+
+CREATE TABLE run (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	game INTEGER NOT NULL,
+	name TEXT NOT NULL,
+
+	FOREIGN KEY (game) REFERENCES game(id)
+);
+
 CREATE TABLE session (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	startedAt TEXT NOT NULL,
 	stoppedAt TEXT NOT NULL,
 	game INTEGER NOT NULL,
+	sessionType INTEGER NULL,
+	run INTEGER NULL,
 	note TEXT NULL,
 	
-	FOREIGN KEY (game) REFERENCES game(id)
+	FOREIGN KEY (game) REFERENCES game(id),
+	FOREIGN KEY (sessionType) REFERENCES sessionType(id),
+	FOREIGN KEY (run) REFERENCES run(id)
 );
 
 
@@ -37,16 +54,20 @@ CREATE VIEW v_sessions AS
 SELECT 
 	session.startedAt,
 	session.stoppedAt,
-	STRFTIME('%H:%M:%S', STRFTIME('%s', session.stoppedAt) - STRFTIME('%s', session.startedAt), 'unixepoch') [duration],
-	game.name [game],
-	platform.name [platform],
+	platform.manufacturer || ' / ' || platform.name [platform],
 	collection.name [collection],
-	session.note
+	game.name [game],
+	sessionType.name [sessionType],
+	run.name [run],
+	session.note,
+	STRFTIME('%H:%M:%S', STRFTIME('%s', session.stoppedAt) - STRFTIME('%s', session.startedAt), 'unixepoch') [duration]
 FROM
 	session
 	INNER JOIN game ON session.game = game.id
 	INNER JOIN platform ON game.platform = platform.id
-	LEFT OUTER JOIN collection ON game.collection = collection.id;
+	LEFT OUTER JOIN collection ON game.collection = collection.id
+	LEFT OUTER JOIN sessionType ON session.sessionType = sessionType.id
+	LEFT OUTER JOIN run ON session.run = run.id;
 
 CREATE VIEW v_optionsGames AS
 SELECT

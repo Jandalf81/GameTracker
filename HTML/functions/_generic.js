@@ -42,3 +42,13 @@ function DatetimeToString(timestamp) {
 
     return retVal;
 }
+
+function getNowForDatetimeLocal() {
+    var now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    now = now.toISOString().slice(0,19);
+
+    console.log(now);
+
+    return now;
+}

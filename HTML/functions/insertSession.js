@@ -1,9 +1,18 @@
-function insertSession(fromDateTime, toDateTime, game, note) {
+function insertSession(fromDateTime, toDateTime, game, sessionType, run, note) {
+    if (fromDateTime == "") {
+        $('#result').html("❌ Please enter startedAt");
+        return;
+    }
+    if (toDateTime == "") {
+        $('#result').html("❌ Please enter stoppedAt");
+        return;
+    }
+
     $.ajax({
         type: "POST",
         url: "functions/insertSession.php",
         dataType: "json",
-        data: {fromDateTime: DatetimeToString(fromDateTime), toDateTime: DatetimeToString(toDateTime), game: game, note: note},
+        data: {fromDateTime: DatetimeToString(fromDateTime), toDateTime: DatetimeToString(toDateTime), game: game, sessionType: sessionType, run: run, note: note},
         success: function(obj, textstatus) {
             console.log(obj);
             $('#result').html("✅");
@@ -11,7 +20,7 @@ function insertSession(fromDateTime, toDateTime, game, note) {
         },
         error: function(obj, textstatus) {
             console.log(obj);
-            $('#result').html("❌");
+            
         },
     });
 }

@@ -21,18 +21,24 @@
         $object->data = $object->data . "<th>startedAt</th>";
         $object->data = $object->data . "<th>stoppedAt</th>";
         $object->data = $object->data . "<th>platform</th>";
+        $object->data = $object->data . "<th>collection</th>";
         $object->data = $object->data . "<th>game</th>";
-        $object->data = $object->data . "<th>duration</th>";
+        $object->data = $object->data . "<th>sessionType</th>";
+        $object->data = $object->data . "<th>run</th>";
         $object->data = $object->data . "<th>note</th>";
+        $object->data = $object->data . "<th>duration</th>";
         $object->data = $object->data . "</tr>";
         while ($row = $results->fetchArray()) {
             $object->data = $object->data . "<tr>";
             $object->data = $object->data . "<td>" . $row['startedAt'] . "</td>";
             $object->data = $object->data . "<td>" . $row['stoppedAt'] . "</td>";
             $object->data = $object->data . "<td>" . $row['platform'] . "</td>";
+            $object->data = $object->data . "<td>" . $row['collection'] . "</td>";
             $object->data = $object->data . "<td>" . $row['game'] . "</td>";
-            $object->data = $object->data . "<td>" . $row['duration'] . "</td>";
+            $object->data = $object->data . "<td>" . $row['sessionType'] . "</td>";
+            $object->data = $object->data . "<td>" . $row['run'] . "</td>";
             $object->data = $object->data . "<td>" . $row['note'] . "</td>";
+            $object->data = $object->data . "<td>" . $row['duration'] . "</td>";
             $object->data = $object->data . "</tr>";
         }
         $object->data = $object->data . "</table>";

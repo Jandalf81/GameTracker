@@ -1,3 +1,52 @@
-select {
+/* Forms */
+form select {
     width: 500px;
+}
+
+form input[type=text],
+form input[type=datetime-local] {
+    width: 492px;
+}
+
+form table, 
+form th, 
+form td, 
+form tr:nth-child(even), 
+form tr:hover {
+    border: none;
+    background-color: transparent;
+}
+
+form input[type=button] {
+    padding: 2px;
+    background-color: #79d4f8;
+}
+
+/* Tables */
+table, 
+th, 
+td {
+    border: 1px solid #000000;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    color: #ffffff;
+    background-color: #0099d4;
+    height: 24px;
+}
+
+td {
+    padding: 2px;
+}
+
+tr:nth-child(even) {
+    background-color: #79d4f8;
+}
+
+tr:hover {
+    background-color: #d4ad00;
 }
