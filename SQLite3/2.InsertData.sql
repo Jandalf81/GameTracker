@@ -16,7 +16,8 @@ INSERT INTO game (id, name, developer, publisher, year, platform, collection) VA
 (6, 'Super Mario Kart 8 Deluxe', 'Nintendo', 'Nintendo', 2015, 3, NULL),
 (7, 'Ragna Rock', NULL, NULL, NULL, 4, NULL),
 (8, 'The 7th Guest', NULL, NULL, NULL, 4, NULL),
-(9, 'The Light Brigade', NULL, NULL, NULL, 4, NULL);
+(9, 'The Light Brigade', NULL, NULL, NULL, 4, NULL),
+(10, 'Walkabout Mini Golf', NULL, NULL, NULL, 4, NULL);
 
 INSERT INTO sessionType (id, name) VALUES
 (1, 'Single Player'),
@@ -55,4 +56,7 @@ INSERT INTO session (id, startedAt, stoppedAt, game, sessionType, run, note) VAL
 (23, '2024-10-13 19:40:00+02:00', '2024-10-13 23:05:00+02:00', 2, 1, 2, 'Hitman 2: Nächtlicher Besuch, Ziellinie'),
 (24, '2024-10-17 20:30:00+02:00', '2024-10-17 21:15:00+02:00', 7, 1, NULL, NULL),
 (25, '2024-10-17 21:15:00+02:00', '2024-10-17 21:55:00+02:00', 8, 1, NULL, NULL),
-(26, '2024-10-17 21:55:00+02:00', '2024-10-17 22:30:00+02:00', 9, 1, NULL, NULL);
+(26, '2024-10-17 21:55:00+02:00', '2024-10-17 22:30:00+02:00', 9, 1, NULL, NULL),
+(27, '2024-10-20 13:15:50+02:00', '2024-10-20 14:29:48+02:00', 1, 1, 1, 'Jabul-Rune'),
+(28, '2024-10-20 20:00:31+02:00', '2024-10-20 21:38:29+02:00', 1, 1, 1, 'Schloss Hyrule'),
+(29, '2024-10-23 20:02:09+02:00', '2024-10-23 21:36:37+02:00', 10, 2, 0, 'Mars Gardens');

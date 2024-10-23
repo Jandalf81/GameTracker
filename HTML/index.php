@@ -78,14 +78,17 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input type="button" value="Speichern" onClick="insertSession(
-                            document.getElementById('fromDateTime').value,
-                            document.getElementById('toDateTime').value,
-                            document.getElementById('optionsGame').value,
-                            document.getElementById('optionsSessionType').value,
-                            document.getElementById('optionsRun').value,
-                            document.getElementById('note').value
-                        );"><div id="result"></div></td>
+                        <td>
+                            <input type="button" value="Speichern" onClick="insertSession(
+                                    document.getElementById('fromDateTime').value,
+                                    document.getElementById('toDateTime').value,
+                                    document.getElementById('optionsGame').value,
+                                    document.getElementById('optionsSessionType').value,
+                                    document.getElementById('optionsRun').value,
+                                    document.getElementById('note').value
+                                );">
+                            <div id="result"></div>
+                        </td>
                     </tr>
                 </table>
             </form>
