@@ -48,7 +48,16 @@ function getNowForDatetimeLocal() {
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     now = now.toISOString().slice(0,19);
 
-    console.log(now);
+    //console.log(now);
 
     return now;
+}
+
+function getDatetimeForInput(timestamp) {
+    var output = new Date(timestamp);
+
+    output.setMinutes(output.getMinutes() - output.getTimezoneOffset());
+    output = output.toISOString().slice(0,19);
+
+    return output;
 }

@@ -17,7 +17,7 @@
         while ($row = $results->fetchArray()) {
             $object->data = $object->data . "<option value=\"" . $row["id"] . "\"";
 
-            if ($row["def"] = 1) {
+            if ($row["default"] == 1) {
                 $object->data = $object->data . " selected";
             }
 

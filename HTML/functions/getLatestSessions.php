@@ -27,6 +27,7 @@
         $object->data = $object->data . "<th>run</th>";
         $object->data = $object->data . "<th>note</th>";
         $object->data = $object->data . "<th>duration</th>";
+        $object->data = $object->data . "<th>EDIT</th>";
         $object->data = $object->data . "</tr>";
         while ($row = $results->fetchArray()) {
             $object->data = $object->data . "<tr>";
@@ -39,6 +40,7 @@
             $object->data = $object->data . "<td>" . $row['run'] . "</td>";
             $object->data = $object->data . "<td>" . $row['note'] . "</td>";
             $object->data = $object->data . "<td>" . $row['duration'] . "</td>";
+            $object->data = $object->data . "<td><a href=\"editSession.php?id=" . $row['sessionID'] . "\">🔧</a></td>";
             $object->data = $object->data . "</tr>";
         }
         $object->data = $object->data . "</table>";
