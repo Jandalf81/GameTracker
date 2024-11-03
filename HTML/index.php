@@ -44,7 +44,7 @@
                                     getOptionsGame();
                                 </script>
                             </select>
-                            <input type="button" value="➕" title="Add game" onClick="console.log('TODO');">
+                            <input type="button" value="➕" title="Add game" onClick="window.location.href='./addGame.php';">
                         </td>
                     </tr>
                     <tr>
